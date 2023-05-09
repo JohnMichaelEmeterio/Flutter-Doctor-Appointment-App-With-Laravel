@@ -62,9 +62,9 @@ flutter:
     - assets/doctor_1.jpg
     - assets/doctor_2.jpg
     - assets/success.json
-    #- assets/doctor_3.jpg
-    #- assets/doctor_4.jpg
-    #- assets/doctor_5.jpg
+    - assets/doctor_3.jpg
+    - assets/doctor_4.jpg
+    - assets/doctor_5.jpg
     #- assets/doctor_6.jpg
     #- assets/doctor_7.jpg
     #- assets/doctor_8.jpg
