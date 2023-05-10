@@ -65,10 +65,10 @@ flutter:
     - assets/doctor_3.jpg
     - assets/doctor_4.jpg
     - assets/doctor_5.jpg
-    #- assets/doctor_6.jpg
-    #- assets/doctor_7.jpg
-    #- assets/doctor_8.jpg
-    #- assets/doctor_9.jpg
+    - assets/doctor_6.jpg
+    - assets/doctor_7.jpg
+    - assets/doctor_8.jpg
+    - assets/doctor_9.jpg
     - assets/facebook.png
     - assets/google.png
     - assets/profile1.jpg

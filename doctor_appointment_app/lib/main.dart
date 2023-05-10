@@ -1,5 +1,6 @@
 import 'package:doctor_appointment_app/main_layout.dart';
 import 'package:doctor_appointment_app/screens/auth_page.dart';
+import 'package:doctor_appointment_app/screens/doctor_details.dart';
 import 'package:doctor_appointment_app/utils/config.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -45,6 +46,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => const AuthPage(),
         'main': (context) => const MainLayout(),
+        'doc_details': (context) => const DoctorDetails(),
       },
     );
   }
