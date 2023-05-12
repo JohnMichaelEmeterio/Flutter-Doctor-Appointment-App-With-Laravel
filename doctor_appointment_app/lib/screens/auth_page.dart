@@ -4,6 +4,8 @@ import 'package:doctor_appointment_app/utils/config.dart';
 import 'package:doctor_appointment_app/utils/text.dart';
 import 'package:flutter/material.dart';
 
+//import 'package:doctor_appointment_app/components/sign_up_form.dart';
+
 class AuthPage extends StatefulWidget {
   const AuthPage({Key? key}) : super(key: key);
 
@@ -70,9 +72,24 @@ class _AuthPageState extends State<AuthPage> {
             Config.spaceSmall,
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: const <Widget>[
-                SocialButton(social: 'google'),
-                SocialButton(social: 'facebook'),
+              children: <Widget>[
+                SizedBox(
+                  width: 175,
+                  height: 70,
+                  child: SocialButton(
+                    social: 'google',
+                    image: Image.asset('assets/google.png', fit: BoxFit.cover),
+                  ),
+                ),
+                SizedBox(
+                  width: 175,
+                  height: 70,
+                  child: SocialButton(
+                    social: 'facebook',
+                    image:
+                        Image.asset('assets/facebook.png', fit: BoxFit.cover),
+                  ),
+                ),
               ],
             ),
             Config.spaceSmall,

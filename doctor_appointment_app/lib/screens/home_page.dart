@@ -1,11 +1,15 @@
 //import 'package:doctor_appointment_app/components/appointment_card.dart';
 //import 'package:doctor_appointment_app/components/doctor_card.dart';
 //import 'package:doctor_appointment_app/models/auth_model.dart';
+import 'dart:convert';
+
 import 'package:doctor_appointment_app/components/appointment.card.dart';
 import 'package:doctor_appointment_app/components/doctor_card.dart';
+import 'package:doctor_appointment_app/providers/dio_provider.dart';
 import 'package:doctor_appointment_app/utils/config.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 //import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 //import 'package:provider/provider.dart';
 
@@ -17,6 +21,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  Map<String, dynamic> user = {};
   List<Map<String, dynamic>> medCat = [
     {
       "icon": FontAwesomeIcons.userDoctor,
@@ -43,6 +48,22 @@ class _HomePageState extends State<HomePage> {
       "category": "Dental",
     },
   ];
+
+  Future<void> getData() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    final token = prefs.getString('token') ?? '';
+
+    if (token.isNotEmpty && token != '') {
+      final response = await DioProvider().getUser(token);
+      if (response != null) {
+        setState(() {
+          user = json.decode(response);
+          print(user);
+        });
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     Config().init(context);

@@ -2,7 +2,8 @@ import 'package:doctor_appointment_app/utils/config.dart';
 import 'package:flutter/material.dart';
 
 class SocialButton extends StatelessWidget {
-  const SocialButton({Key? key, required this.social}) : super(key: key);
+  const SocialButton({Key? key, required this.social, required Image image})
+      : super(key: key);
 
   final String social;
 
