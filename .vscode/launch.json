@@ -8,14 +8,16 @@
             "name": "doctor_appointment_app",
             "cwd": "doctor_appointment_app",
             "request": "launch",
-            "type": "dart"
+            "type": "dart",
+           
         },
         {
             "name": "doctor_appointment_app (profile mode)",
             "cwd": "doctor_appointment_app",
             "request": "launch",
             "type": "dart",
-            "flutterMode": "profile"
+            "flutterMode": "profile",
+            
         },
         {
             "name": "doctor_appointment_app (release mode)",

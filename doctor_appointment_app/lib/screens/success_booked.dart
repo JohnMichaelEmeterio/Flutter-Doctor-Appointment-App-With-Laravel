@@ -28,6 +28,7 @@ class AppointmentBooked extends StatelessWidget {
               ),
             ),
             const Spacer(),
+            //back to home page
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
               child: Button(
@@ -36,7 +37,7 @@ class AppointmentBooked extends StatelessWidget {
                 onPressed: () => Navigator.of(context).pushNamed('main'),
                 disable: false,
               ),
-            ),
+            )
           ],
         ),
       ),
