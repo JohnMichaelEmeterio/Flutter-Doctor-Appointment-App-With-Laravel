@@ -71,10 +71,14 @@ class _LoginFormState extends State<LoginForm> {
             builder: (context, auth, child) {
               return Button(
                 width: double.infinity,
-                title: 'Sing In',
+                title: 'Sign In',
                 onPressed: () async {
                   final token = await DioProvider()
                       .getToken(_emailController.text, _passController.text);
+
+                  //  auth.loginSuccess();
+                  //   MyApp.navigatorKey.currentState!.pushNamed('main');
+                  //    } catch (e) {
 
                   if (token) {
                     auth.loginSuccess();
@@ -84,7 +88,7 @@ class _LoginFormState extends State<LoginForm> {
                 disable: false,
               );
             },
-          )
+          ),
         ],
       ),
     );

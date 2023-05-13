@@ -17,8 +17,8 @@ class DioProvider {
           data: {'email': email, 'password': password});
 
       if (response.statusCode == 200 && response.data != '') {
-        final SharedPreferences pref = await SharedPreferences.getInstance();
-        await pref.setString('token', response.data);
+        final SharedPreferences prefs = await SharedPreferences.getInstance();
+        await prefs.setString('token', response.data);
         return true;
       } else {
         return false;
