@@ -1,8 +1,9 @@
+import 'dart:convert';
+
 import 'package:doctor_appointment_app/providers/dio_provider.dart';
 import 'package:doctor_appointment_app/utils/config.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'dart:convert';
 
 class AppointmentPage extends StatefulWidget {
   const AppointmentPage({Key? key}) : super(key: key);
@@ -244,12 +245,29 @@ class _AppointmentPageState extends State<AppointmentPage> {
 }
 
 class ScheduleCard extends StatelessWidget {
-  const ScheduleCard(
-      {Key? key, required this.date, required this.day, required this.time})
-      : super(key: key);
+  const ScheduleCard({
+    Key? key,
+    required this.date,
+    required this.day,
+    required this.time,
+  }) : super(key: key);
+
   final String date;
   final String day;
   final String time;
+
+  String getFormattedTime() {
+    final parts = time.split(':');
+    final int hour = int.tryParse(parts[0]) ?? 0;
+    final int minute = int.tryParse(parts[1]) ?? 0;
+
+    if (hour >= 0 && hour < 12) {
+      return '${hour.toString().padLeft(2, '0')}:${minute.toString().padLeft(2, '0')} AM';
+    } else {
+      final int twelveHourFormat = hour % 12;
+      return '${twelveHourFormat.toString().padLeft(2, '0')}:${minute.toString().padLeft(2, '0')} PM';
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -290,12 +308,13 @@ class ScheduleCard extends StatelessWidget {
             width: 5,
           ),
           Flexible(
-              child: Text(
-            time,
-            style: const TextStyle(
-              color: Config.primaryColor,
+            child: Text(
+              getFormattedTime(),
+              style: const TextStyle(
+                color: Config.primaryColor,
+              ),
             ),
-          ))
+          ),
         ],
       ),
     );

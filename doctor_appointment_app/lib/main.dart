@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
             floatingLabelStyle: TextStyle(color: Config.primaryColor),
             prefixIconColor: Colors.black38,
           ),
-          scaffoldBackgroundColor: Colors.white,
+          scaffoldBackgroundColor: Color.fromARGB(255, 243, 239, 239),
           bottomNavigationBarTheme: BottomNavigationBarThemeData(
             backgroundColor: Config.primaryColor,
             selectedItemColor: Colors.white,
@@ -59,3 +59,5 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+   
+//adb reverse tcp:8000 tcp:8000  

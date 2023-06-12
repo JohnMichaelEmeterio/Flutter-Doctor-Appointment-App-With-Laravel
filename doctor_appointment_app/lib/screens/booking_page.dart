@@ -110,7 +110,7 @@ class _BookingPageState extends State<BookingPage> {
                           ),
                           alignment: Alignment.center,
                           child: Text(
-                            '${index + 9}:00 ${index + 9 > 11 ? "PM" : "AM"}',
+                            '${index + 9 > 12 ? index - 3 : index + 9}:00 ${index + 9 >= 12 ? "PM" : "AM"}',
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               color:

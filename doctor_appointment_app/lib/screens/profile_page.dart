@@ -6,7 +6,7 @@ import "package:shared_preferences/shared_preferences.dart";
 import "../providers/dio_provider.dart";
 
 class ProfilePage extends StatefulWidget {
-  const ProfilePage({Key? key}) : super(key: key);
+  ProfilePage({Key? key}) : super(key: key);
 
   @override
   State<ProfilePage> createState() => _ProfilePageState();
@@ -21,7 +21,7 @@ class _ProfilePageState extends State<ProfilePage> {
           flex: 4,
           child: Container(
             width: double.infinity,
-            color: Config.primaryColor,
+            color: Color.fromARGB(255, 36, 36, 36),
             child: Column(
               children: const <Widget>[
                 SizedBox(
@@ -36,7 +36,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   height: 10,
                 ),
                 Text(
-                  'Amanda Tan',
+                  'Layer\'s Salon',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 20,
@@ -46,7 +46,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   height: 10,
                 ),
                 Text(
-                  '23 Years Old | Female',
+                  'Beauty Salon',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 15,
@@ -58,17 +58,17 @@ class _ProfilePageState extends State<ProfilePage> {
         ),
         Expanded(
           flex: 5,
-          //Container
-          child: SizedBox(
-            // Color: Colors.grey[200],
+          child: Container(
+            color: Color.fromARGB(123, 128, 124, 124),
             child: Center(
               child: Card(
                 margin: const EdgeInsets.fromLTRB(0, 45, 0, 0),
-                child: SizedBox(
+                child: Container(
                   width: 300,
-                  height: 250,
+                  //edit here kapag nag overflowed
+                  height: 260,
                   child: Padding(
-                    padding: const EdgeInsets.all(5),
+                    padding: const EdgeInsets.all(10),
                     child: Column(
                       children: [
                         const Text(

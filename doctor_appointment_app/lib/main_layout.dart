@@ -30,7 +30,7 @@ class _MainLayoutState extends State<MainLayout> {
           const HomePage(),
           FavPage(),
           const AppointmentPage(),
-          const ProfilePage(),
+          ProfilePage(),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(

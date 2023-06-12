@@ -17,12 +17,13 @@ class DoctorCard extends StatelessWidget {
   Widget build(BuildContext context) {
     Config().init(context);
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-      height: 150,
+      padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+      //edit here kapag nag overflowed
+      height: 165,
       child: GestureDetector(
         child: Card(
           elevation: 5,
-          color: Colors.white,
+          color: const Color.fromARGB(255, 255, 255, 255),
           child: Row(
             children: [
               SizedBox(
@@ -40,7 +41,7 @@ class DoctorCard extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Text(
-                        "Dr ${doctor['doctor_name']}",
+                        "${doctor['doctor_name']}",
                         style: const TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,

@@ -85,7 +85,7 @@ class _SignUpFormState extends State<SignUpForm> {
             builder: (context, auth, child) {
               return Button(
                 width: double.infinity,
-                title: 'Sign Up',
+                title: 'Create account',
                 onPressed: () async {
                   final userRegistration = await DioProvider().registerUser(
                       _nameController.text,

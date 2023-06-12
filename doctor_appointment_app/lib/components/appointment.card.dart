@@ -46,7 +46,7 @@ class _AppointmentCardState extends State<AppointmentCard> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Text(
-                        'Dr ${widget.doctor['doctor_name']}',
+                        '${widget.doctor['doctor_name']}',
                         style: const TextStyle(color: Colors.white),
                       ),
                       const SizedBox(
@@ -54,7 +54,8 @@ class _AppointmentCardState extends State<AppointmentCard> {
                       ),
                       Text(
                         widget.doctor['category'],
-                        style: const TextStyle(color: Colors.black),
+                        style: const TextStyle(
+                            color: Color.fromARGB(255, 197, 192, 192)),
                       )
                     ],
                   ),
@@ -97,7 +98,7 @@ class _AppointmentCardState extends State<AppointmentCard> {
                               return RatingDialog(
                                   initialRating: 1.0,
                                   title: const Text(
-                                    'Rate the Doctor',
+                                    'Rate Now',
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
                                       fontSize: 25,
@@ -105,7 +106,7 @@ class _AppointmentCardState extends State<AppointmentCard> {
                                     ),
                                   ),
                                   message: const Text(
-                                    'Please help us to rate our Doctor',
+                                    'Please help us to rate our Staff',
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
                                       fontSize: 15,
@@ -161,6 +162,20 @@ class ScheduleCard extends StatelessWidget {
   const ScheduleCard({Key? key, required this.appointment}) : super(key: key);
   final Map<String, dynamic> appointment;
 
+  String getFormattedTime() {
+    final time = appointment['time'];
+    final parts = time.split(':');
+    final int hour = int.tryParse(parts[0]) ?? 0;
+    final int minute = int.tryParse(parts[1]) ?? 0;
+
+    if (hour >= 0 && hour < 12) {
+      return '${hour.toString().padLeft(2, '0')}:${minute.toString().padLeft(2, '0')} AM';
+    } else {
+      final int twelveHourFormat = hour % 12;
+      return '${twelveHourFormat.toString().padLeft(2, '0')}:${minute.toString().padLeft(2, '0')} PM';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -197,10 +212,11 @@ class ScheduleCard extends StatelessWidget {
             width: 5,
           ),
           Flexible(
-              child: Text(
-            appointment['time'],
-            style: const TextStyle(color: Colors.white),
-          ))
+            child: Text(
+              getFormattedTime(),
+              style: const TextStyle(color: Colors.white),
+            ),
+          ),
         ],
       ),
     );

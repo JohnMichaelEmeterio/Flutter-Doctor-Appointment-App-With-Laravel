@@ -25,6 +25,30 @@
             "request": "launch",
             "type": "dart",
             "flutterMode": "release"
-        }
-    ]
+        },
+                {
+      "name": "Redmi note 7",
+      "request": "launch",
+      "type": "dart",
+      "deviceId": "192.168.100.19:5555"
+       },
+         {
+      "name": "M2010J19SG",
+      "request": "launch", 
+      "type": "dart",
+      "deviceId": "192.168.100.82:5555"
+       },
+         {
+      "name": "Emulator",
+      "request": "launch",
+      "type": "dart",
+      "deviceId": "emulator-5554"
+       },
+        ],
+  "compounds": [
+    {
+      "name": "All Devices",
+      "configurations": ["Redmi note 7", "M2010J19SG", "Emulator"]
+    }
+  ]
 }

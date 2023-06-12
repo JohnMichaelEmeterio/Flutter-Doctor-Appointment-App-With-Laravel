@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
 import '../components//custom_appbar.dart';
 
 class DoctorDetails extends StatefulWidget {
@@ -191,14 +192,19 @@ class DetailBody extends StatelessWidget {
             style: TextStyle(fontWeight: FontWeight.w600, fontSize: 18),
           ),
           Config.spaceSmall,
-          Text(
-            '${doctor['doctor_name']} is an experienced ${doctor['category']} in Layer\'s Salon',
-            style: const TextStyle(
-              fontWeight: FontWeight.w500,
-              height: 1.5,
+          Container(
+            height: 132, // Adjust the height according to your needs
+            child: SingleChildScrollView(
+              child: Text(
+                '${doctor['bio_data']} ',
+                style: const TextStyle(
+                  fontWeight: FontWeight.w500,
+                  height: 1.3,
+                ),
+                softWrap: true,
+                textAlign: TextAlign.start,
+              ),
             ),
-            softWrap: true,
-            textAlign: TextAlign.justify,
           )
         ],
       ),
