@@ -1,54 +1,70 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "name": "doctor_appointment_app",
-            "cwd": "doctor_appointment_app",
-            "request": "launch",
-            "type": "dart",
-           
-        },
-        {
-            "name": "doctor_appointment_app (profile mode)",
-            "cwd": "doctor_appointment_app",
-            "request": "launch",
-            "type": "dart",
-            "flutterMode": "profile",
-            
-        },
-        {
-            "name": "doctor_appointment_app (release mode)",
-            "cwd": "doctor_appointment_app",
-            "request": "launch",
-            "type": "dart",
-            "flutterMode": "release"
-        },
-                {
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "doctor_appointment_app",
+      "cwd": "doctor_appointment_app",
+      "request": "launch",
+      "type": "dart",
+    },
+    {
+      "name": "doctor_appointment_app (profile mode)",
+      "cwd": "doctor_appointment_app",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "profile",
+    },
+    {
+      "name": "doctor_appointment_app (release mode)",
+      "cwd": "doctor_appointment_app",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "release"
+    },
+    {
       "name": "Redmi note 7",
       "request": "launch",
       "type": "dart",
       "deviceId": "192.168.100.19:5555"
-       },
-         {
+    },
+    {
       "name": "M2010J19SG",
-      "request": "launch", 
+      "request": "launch",
       "type": "dart",
-      "deviceId": "192.168.100.82:5555"
-       },
-         {
+      "deviceId": "192.168.1.101:5555"
+    },
+    {
+      "name": "SM A125F",
+      "request": "launch",
+      "type": "dart",
+      "deviceId": "R58R76891FX"
+      //"deviceId": "192.168.1.102:5555"
+    },
+    {
       "name": "Emulator",
       "request": "launch",
       "type": "dart",
       "deviceId": "emulator-5554"
-       },
-        ],
+    },
+    {
+      "name": "Infinix X6711",
+      "request": "launch",
+      "type": "dart",
+      "deviceId": "192.168.100.86:5555"
+    },
+  ],
   "compounds": [
     {
       "name": "All Devices",
-      "configurations": ["Redmi note 7", "M2010J19SG", "Emulator"]
+      "configurations": [
+        "Redmi note 7",
+        "M2010J19SG",
+        "Emulator",
+        "Infinix X6711",
+      ]
     }
   ]
 }
